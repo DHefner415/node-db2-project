@@ -1,15 +1,26 @@
 const checkCarId = (req, res, next) => {
-  // DO YOUR MAGIC
+  console.log('id working')
+  next()
 }
 
 const checkCarPayload = (req, res, next) => {
-  // DO YOUR MAGIC
+  console.log('payload working')
+  next()
 }
 
 const checkVinNumberValid = (req, res, next) => {
-  // DO YOUR MAGIC
+  console.log('vin valid working')
+  next()
 }
 
 const checkVinNumberUnique = (req, res, next) => {
-  // DO YOUR MAGIC
+  console.log('vin unique working')
+  next()
+}
+
+module.exports = {
+  checkCarId,
+  checkCarPayload,
+  checkVinNumberValid,
+  checkVinNumberUnique,
 }
