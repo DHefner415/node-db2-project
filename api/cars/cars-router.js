@@ -11,8 +11,14 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+//eslint-disable-next-line
 router.get('/:id', mw.checkCarId, async (req, res, next) => {
-  //eslint-disable-line
+  //   try {
+  //     const car = await Cars.getById(req.params.id)
+  //     res.status(200).json(car)
+  //   } catch (err) {
+  //     next(err)
+  //   }
   res.json(req.car)
 })
 
@@ -40,6 +46,13 @@ router.put(
 router.delete('/:id', mw.checkCarId, async (req, res, next) => {
   console.log('testing delete')
   next()
+})
+
+router.use((err, req, res, next) => {
+  res.status(err.status || 500).json({
+    message: err.message,
+    stack: err.stack,
+  })
 })
 
 module.exports = router
