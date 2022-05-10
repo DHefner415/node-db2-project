@@ -13,12 +13,6 @@ router.get('/', async (req, res, next) => {
 
 //eslint-disable-next-line
 router.get('/:id', mw.checkCarId, async (req, res, next) => {
-  //   try {
-  //     const car = await Cars.getById(req.params.id)
-  //     res.status(200).json(car)
-  //   } catch (err) {
-  //     next(err)
-  //   }
   res.json(req.car)
 })
 
